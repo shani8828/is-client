@@ -1,9 +1,9 @@
 import axios from 'axios';
-
+const url = `${import.meta.env.VITE_BACKEND_URI}/api` || 'http://localhost:5000/api';
 // Create an instance of axios
 const api = axios.create({
   // Use your local backend URL (port 5000 is common for MERN)
-  baseURL: 'http://localhost:5000/api',
+  baseURL: url,
   headers: {
     'Content-Type': 'application/json',
   },
