@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  frontend:
+    build: .
+    container_name: is_client_frontend
+    ports:
+      - "5177:5177"
+    restart: unless-stopped
+    environment:
+      - VITE_API_URL=http://localhost:5010version: '3.8'
+services:
+  frontend:
+    build: .
+    container_name: is_client_frontend
+    ports:
+      - "5177:5177"
+    restart: unless-stopped
+    environment:
+      - VITE_API_URL=http://localhost:5010
