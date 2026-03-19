@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* --- Night Cinema Scrollbar Styles --- */
+
+/* 1. The background of the scrollbar area */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background-color: #0b0b0b; /* Deep night black */
+}
+
+/* 2. The draggable handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 10px;
+  border: 3px solid #0b0b0b; /* Creates a "floating" effect */
+  transition: background 0.3s ease;
+}
+
+/* 3. Handle on hover - Cinema Accent Red */
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914; /* Classic Netflix-style Red */
+  border: 2px solid #0b0b0b;
+}
+
+/* 4. The track (the path the handle moves along) */
+::-webkit-scrollbar-track {
+  background: #0b0b0b;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 5. Corner where horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: #0b0b0b;
+}
+
+/* Firefox Support (Limited styling) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a #0b0b0b;
+}
