@@ -76,12 +76,12 @@ const HomePage = () => {
             >
               Dashboard <ChevronRight size={20} />
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               className="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white font-black rounded-2xl border border-slate-800 hover:border-slate-600 transition-all"
             >
               Documentation
-            </Link>
+            </Link> */}
           </div>
         </section>
 

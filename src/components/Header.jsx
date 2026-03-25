@@ -21,7 +21,7 @@ const Header = () => {
           >
             The Project
           </a>
-
+          <Link to="/captured-faces" className="uppercase hover:text-blue-400 transition-colors duration-200">Captured Faces  </Link>
           <a
             href="/team"
             className="uppercase hover:text-blue-400 transition-colors duration-200"

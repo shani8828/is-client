@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Team from "./pages/Team";
 import Layout from "./components/Layout";
 import NoPage from "./pages/NoPage";
+import CapturedPeople from "./components/people/CapturedPeople";
 
 export default function RoutesConfig() {
   return (
@@ -23,6 +24,7 @@ export default function RoutesConfig() {
           <Route path="/people" element={<KnownPeople />} />
           <Route path="/events" element={<Events />} />
           <Route path="/dashboard" element={<LiveDashboard />} />
+          <Route path="/captured-faces" element={<CapturedPeople />} />
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

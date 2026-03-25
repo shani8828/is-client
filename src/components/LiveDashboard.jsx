@@ -37,13 +37,25 @@ const LiveDashboard = () => {
     };
   }, [events]);
   // 2. Reset Handler - Clears local state to start from zero
-  const handleReset = () => {
+  const handleReset = async () => {
     if (
       window.confirm(
-        "Are you sure you want to reset the current dashboard? This will clear the counts and log list.",
+        "Are you sure you want to reset the current dashboard? This will PERMANENTLY clear the database and log list.",
       )
     ) {
-      setEvents([]);
+      try {
+        // 1. Call Backend to clear DB
+        const response = await api.delete("/dashboard/reset");
+
+        if (response.status === 200) {
+          // 2. Clear local state only after successful DB deletion
+          setEvents([]);
+          alert("Dashboard has been reset.");
+        }
+      } catch (err) {
+        console.error("Failed to reset dashboard:", err);
+        alert("Error resetting dashboard. Please try again.");
+      }
     }
   };
   useEffect(() => {
@@ -178,7 +190,6 @@ const LiveDashboard = () => {
           borderColor="border-orange-500/30"
         />
       </div>
-
       {/* --- DATA TABLE SECTION --- */}
       <div className="bg-slate-900/50 border border-slate-800 rounded-3xl overflow-hidden backdrop-blur-md shadow-2xl">
         <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/30">

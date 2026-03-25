@@ -10,7 +10,7 @@ export default function Cameras() {
   const [cameras, setCameras] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const fetchCameras = async () => {
       try {
